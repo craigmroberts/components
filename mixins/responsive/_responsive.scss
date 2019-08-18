@@ -1,0 +1,35 @@
+/* BREAKPOINTS */
+// Small devices (landscape phones, 576px and up)
+$break-mobile: 576px;
+$break-mobile-s: 320px;
+$break-mobile-m: 375px;
+$break-mobile-l: 425px;
+
+// Medium devices (tablets, 768px and up)
+$break-tablet: 768px;
+
+// Large devices (desktops, 992px and up)
+$break-desktop: 992px;
+
+// Extra large devices (large desktops, 1200px and up)
+$break-large-desktop: 1500px;
+@mixin mobile {
+  @media (max-width: #{$break-mobile}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$break-tablet}) and (max-width: #{$break-desktop - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$break-desktop}) and (max-width: #{$break-large-desktop - 1px}) {
+    @content;
+  }
+}
+@mixin desktop-l {
+  @media (min-width: #{$break-large-desktop}) {
+    @content;
+  }
+}

@@ -1,0 +1,225 @@
+$button-font-size: 1em;
+$button-default: #3369ff;
+$btn-text-color: #ffffff;
+
+.btn {
+  border: 0;
+  text-decoration: none;
+  color: $btn-text-color;
+  padding: 13px 32px;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  display: inline-block;
+  background-color: $button-default;
+  color: white;
+  position: relative;
+  font-size: $button-font-size;
+  line-height: $button-font-size;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  -webkit-appearance: none;
+border-radius: 0;
+  &:hover {
+    background: none;
+    color: $button-default;
+    span,
+    a,
+    input[type="submit"] {
+      background: none;
+      color: $button-default;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+  input[type="submit"],
+  button {
+  border: 0;
+  text-decoration: none;
+  color: $btn-text-color;
+  color: $button-default;
+  display: inline-block;
+  background-color: $button-default;
+  color: white;
+  position: relative;
+  font-size: $button-font-size;
+  line-height: $button-font-size;
+    -moz-appearance: none;
+-webkit-appearance: none;
+  }
+  i {
+    margin-right: 0.25em;
+    font-size: $button-font-size;
+    font-size: inherit;
+  }
+  &-small {
+    font-size: 0.75em;
+  }
+  &-smallest {
+    font-size: 0.65em;
+  }
+  &-large {
+    font-size: 1.25em;
+  }
+  &-larger {
+    font-size: 1.5em;
+  }
+  &-largest {
+    font-size: 1.75em;
+  }
+  &-uc {
+    text-transform: uppercase;
+  }
+
+  &-link {
+    background: none;
+    color: $button-default;
+  }
+
+  /* STYLES */
+  &-pill {
+    border-radius: 2em;
+  }
+
+  &-rounded {
+    border-radius: 0.4em;
+    &::after {
+      border-radius: 0.4em;
+    }
+  }
+
+  &-ghost {
+    border: 0.1em solid $button-default;
+    background: none;
+    color: $button-default;
+  }
+
+  &-dash {
+    border: 0.1em dashed $button-default;
+    background: none;
+    color: $button-default;
+  }
+
+  &-slant {
+    transform: skewX(-45deg);
+    span,
+    input[type="submit"]{
+      display: block;
+      transform: skewX(45deg);
+    }
+    &-reversed {
+      transform: skewx(45deg);
+      span,
+      input[type="submit"] {
+        display: block;
+        transform: skewX(-45deg);
+      }
+    }
+  }
+
+  &-fancy {
+    background:none;
+    color: $button-default;
+    border: 0.1em solid $button-default;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    input[type="submit"] {
+      color: $button-default;
+      background: none
+    }
+   &::after {
+     position: absolute;
+     display: block;
+     content: '';
+     width: 91%;
+     height: 130%;
+     left: 3%;
+     right: 0;
+     top: -20%;
+     bottom: 0;
+     border: 0.1em solid $button-default;
+   }
+ }
+
+  &-brackets {
+      border: 0.1em solid $button-default;
+      background: none;
+    span,
+    button,
+    input[type="submit"],
+    a {
+      position: relative;
+      z-index: 1;
+      color: $button-default;
+      background: none;
+    }
+    &::before {
+      content: '';
+      width: 3.5em;
+      height: 3em;
+      background: white;
+      position: absolute;
+      top: -0.1em;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 0;
+    }
+  }
+
+  &-raised {
+    box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.14), 0 1em 5em 0 rgba(0, 0, 0, 0.12),
+    0 3em 1em -2em rgba(0, 0, 0, 0.2);
+  }
+
+  &-double {
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 100%;
+      left: -0.3em;
+      right: 0;
+      top: -0.3em;;
+      bottom: 0;
+      border: 0.1em solid $button-default;
+    }
+  }
+
+  &-inset {
+    box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.3);
+  }
+
+  /* ICONS */
+  &-icon {
+    padding-right: 1em;
+    padding-left: 1em;
+    i {
+    margin-right: 0;
+    }
+
+    &-seperator {
+      i {
+        position: relative;
+        margin-right: 1em;
+        &::after {
+          background-color: $button-default;
+          margin: auto 0.5em;
+          content: '';
+          width: 0.1em;
+          height: 1.75em;
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: -1.25em;
+        }
+      }
+    }
+  }
+}
