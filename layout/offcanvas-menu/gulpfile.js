@@ -12,7 +12,6 @@ var imagemin = require('gulp-imagemin');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
 var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').create();
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
 var gulpSequence = require('gulp-sequence');
@@ -27,7 +26,7 @@ var paths = cfg.paths;
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', function() {
-	gulp.watch(`${paths.sass}/**/*.scss`, gulp.series('styles'));
+	gulp.watch(`${paths.styles}/**/*.scss`, gulp.series('styles'));
 });
 
 // Run:
@@ -35,7 +34,7 @@ gulp.task('watch', function() {
 // Compiles SCSS files in CSS
 gulp.task('sass', function() {
 	var stream = gulp
-		.src(paths.sass + '/*.scss')
+		.src(paths.styles + '/*.scss')
 		.pipe(
 			plumber({
 				errorHandler: function(err) {
@@ -49,7 +48,6 @@ gulp.task('sass', function() {
 		.pipe(postcss([autoprefixer()]))
 		.pipe(sourcemaps.write(undefined, { sourceRoot: null }))
 		.pipe(gulp.dest(paths.css));
-    console.log(paths.css);
 	return stream;
 });
 

@@ -1,0 +1,10 @@
+{
+	"paths": {
+		"css": "./css",
+		"styles": "./src/styles",
+		"scripts": "./src/scripts",
+		"node": "./node_modules/",
+		"bower": "./bower_components/",
+		"vendor": ""
+	}
+}

@@ -1,0 +1,14 @@
+.button {
+  background: none;
+  text-transform: uppercase;
+  padding: 1em;
+  cursor: pointer;
+  outline: none;
+  border:0;
+  color: white;
+  &__close {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
